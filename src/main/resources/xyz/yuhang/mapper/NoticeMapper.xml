@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.yuhang.mapper.NoticeMapper">
+
+
+    <insert id="add">
+        insert into notice (id, notice)
+        values (null,#{notice});
+    </insert>
+
+    <delete id="delete">
+        delete from notice where id = #{id}
+    </delete>
+
+    <select id="selectAll" resultType="Notice">
+        select *
+        from notice;
+    </select>
+</mapper>

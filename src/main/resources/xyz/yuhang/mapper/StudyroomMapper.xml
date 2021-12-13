@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.yuhang.mapper.StudyroomMapper">
+    <resultMap id="studyroomResultMap" type="Studyroom">
+        <result column="Seat_number" property="seatNumber"></result>
+        <result column="academy_name" property="academyName"></result>
+    </resultMap>
+
+    <resultMap id="studyroomLogResultMap" type="StudyroomLog">
+        <result column="Seat_number" property="seatNumber"></result>
+        <result column="us_ing" property="usIng"></result>
+        <result column="nus_ing" property="nusIng"></result>
+        <result column="time_id" property="timeId"></result>
+        <result column="academy_name" property="academyName"></result>
+    </resultMap>
+
+    <resultMap id="academyResultMap" type="academy">
+        <result column="academy_name" property="academyName"></result>
+    </resultMap>
+
+    <resultMap id="selectStudyroom" type="studyroom">
+        <result column="Seat_number" property="seatNumber"></result>
+        <result column="academy_name" property="academyName"></result>
+    </resultMap>
+
+    <select id="SelectById" resultMap="studyroomLogResultMap">
+        select *
+        from studyroom_log
+        <where>
+            <if test="srid != null and srid != ''">
+                and srid = #{srid}
+            </if>
+            <if test="timeId != null and timeId != ''">
+                and time_id = #{timeId}
+            </if>
+            <if test="date != null and date != ''">
+                and date = #{date}
+            </if>
+            <if test="academyName != null and academyName != ''">
+                and academy_name = #{academyName}
+            </if>
+        </where>
+    </select>
+    <select id="selectStudyroom" resultMap="studyroomResultMap">
+        select * from all_studyroom
+    </select>
+</mapper>

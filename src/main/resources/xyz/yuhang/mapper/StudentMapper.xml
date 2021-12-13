@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.yuhang.mapper.StudentMapper">
+
+    <resultMap id="studentResultMap" type="Student">
+        <result column="Student_id" property="studentId"></result>
+        <result column="Student_name" property="studentName"></result>
+    </resultMap>
+
+    <resultMap id="accountStudentResultMap" type="AccountStudent">
+        <result column="Student_id" property="studentId"></result>
+        <result column="Student_number" property="studentNumber"></result>
+        <result column="Student_password" property="studentPassword"></result>
+    </resultMap>
+
+    <resultMap id="StudentStudyResultMap" type="studentStudy">
+        <result column="student_id" property="studentId"></result>
+        <result column="time_id" property="timeId"></result>
+    </resultMap>
+</mapper>
