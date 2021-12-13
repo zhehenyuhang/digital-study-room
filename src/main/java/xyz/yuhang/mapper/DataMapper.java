@@ -35,4 +35,6 @@ public interface DataMapper {
     @Select("select count from student_study where student_id =#{studentId} and time_id = #{timeId} and date = #{date} and srid = #{srid}")
     String dselectByIdandTime(@Param("studentId") String  studentId,@Param("timeId") String timeId,@Param("date") String date,@Param("srid") String srid);
 
+    //han
+
 }
