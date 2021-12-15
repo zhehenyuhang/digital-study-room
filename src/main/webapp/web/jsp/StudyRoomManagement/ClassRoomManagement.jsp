@@ -37,8 +37,8 @@
             <form action="${pageContext.request.contextPath}/selectByNamestudyroom" method="post" style="
     display: flex;
 ">
-                <input class="layui-input"  name="srid" placeholder="输入你要查询的名字">
-                <input  type="submit" value="查询">
+                <input class="layui-input"  name="srid" placeholder="输入你要查询的教室号">
+                <input  type="submit" value="查询" class="layui-btn">
             </form>
         </div>
 

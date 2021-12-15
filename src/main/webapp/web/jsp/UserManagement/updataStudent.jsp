@@ -21,13 +21,13 @@
                 <input value="${student.id}" name="id" type="hidden">
 
                 <div style=" margin: 0 -32px;">
-                    <label class="layui-form-label"><strong>学生学号:</strong></label>
+                    <label class="layui-form-label"><strong>学生账号:</strong></label>
                     <div class="layui-input-inline">
                         <input value="${student.studentId}" name="studentId" lay-verify="required"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div style=" margin: 0 -32px;">
-                    <label class="layui-form-label"><strong>学生姓名:</strong></label>
+                    <label class="layui-form-label"><strong>学生密码:</strong></label>
                     <div class="layui-input-inline">
                         <input value="${student.studentName}" name="studentName" lay-verify="required"  autocomplete="off" class="layui-input">
                     </div>

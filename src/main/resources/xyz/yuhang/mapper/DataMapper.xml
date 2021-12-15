@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="xyz.yuhang.mapper.DataMapper">
+    <resultMap id="studentstudyResultMap" type="studentStudy">
+        <result column="student_id" property="studentId"></result>
+        <result column="time_id" property="timeId"></result>
+    </resultMap>
+
     <update id="updateStudyroomlog">
         UPDATE studyroom_log
         set us_ing=us_ing+1,nus_ing=nus_ing-1

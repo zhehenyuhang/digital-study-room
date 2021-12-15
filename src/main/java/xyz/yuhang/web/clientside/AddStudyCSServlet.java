@@ -28,8 +28,10 @@ public class AddStudyCSServlet extends HttpServlet {
         String i = dataService.selectByIdandTime(studentId, timeId, date);
 
         // session.setAttribute("xuanze",0);
+        //判断选择的课是否还有空余座位
+        int s = dataService.selectByNusing(srid, timeId, date);
 
-        if("0".equals(i)){
+        if("0".equals(i) && s>0){
             //可以选择
             dataService.updateUsing(srid,timeId,date,studentId);
             dataService.updateStudyroomlog(srid,timeId,date);
@@ -39,7 +41,7 @@ public class AddStudyCSServlet extends HttpServlet {
             // session.setAttribute("xuanze",-1);
         }
 
-        request.setAttribute("yanse",srid+timeId+date);
+        // request.setAttribute("yanse",srid+timeId+date);
 
         Object where = session.getAttribute("where");
 

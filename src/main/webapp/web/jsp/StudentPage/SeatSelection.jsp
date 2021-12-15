@@ -18,7 +18,6 @@
 <div>
   <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
     <legend>座位管理</legend><p>&nbsp;</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;座位信息【说明：绿色表示可选，红色表示可选】</p><p>&nbsp;</p>
 
     <form action="${pageContext.request.contextPath }/selectByIdStudyroomCSServlet" method="post">
       <div class="layui-form-item" style=" display: flex;">

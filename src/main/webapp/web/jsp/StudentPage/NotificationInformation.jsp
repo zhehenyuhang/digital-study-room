@@ -12,6 +12,11 @@
 <head>
     <meta charset="utf-8">
     <title>自习室管理系统</title>
+    <style>
+        table tr td{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="headStudent.jsp"></jsp:include>
@@ -19,36 +24,15 @@
     <legend>通知信息</legend>
 </fieldset>
 
-<table class="layui-table" lay-size="lg">
-    <colgroup>
-        <col width="150">
-        <col width="200">
-        <col>
-    </colgroup>
-    <thead>
-    <tr>
-        <th>发布人</th>
-        <th>发布时间</th>
-        <th>通知内容</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>管理员</td>
-        <td>2021-9-22</td>
-        <td><a href="NotificationInformation1.jsp">关于2021年国庆节放假安排的通知</a></td>
-    </tr>
-    <tr>
-        <td>管理员</td>
-        <td>2021-9-14</td>
-        <td><a href="NotificationInformation2.jsp">关于2021年中秋节放假安排的通知</a></td>
-    </tr>
-    <tr>
-        <td>管理员</td>
-        <td>2021-12-30</td>
-        <td><a href="NotificationInformation3.jsp">关于2021年寒假自习室开放的通知</a></td>
-    </tr>
-    </tbody>
+<table class="layui-table" border="1" cellspacing="0" style=" width: 75%;">
+    <c:forEach items="${notices}" var="notice" varStatus="status">
+        <tr>
+            <td>${status.count}</td>
+            <td>${notice.notice}</td>
+
+        </tr>
+
+    </c:forEach>
 </table>
 <script src="../../layui/layui.js"></script>
 <script>

@@ -1,9 +1,9 @@
 package xyz.yuhang.mapper;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+import xyz.yuhang.pojo.StudentStudy;
+
+import java.util.List;
 
 public interface DataMapper {
 
@@ -35,6 +35,11 @@ public interface DataMapper {
     @Select("select count from student_study where student_id =#{studentId} and time_id = #{timeId} and date = #{date} and srid = #{srid}")
     String dselectByIdandTime(@Param("studentId") String  studentId,@Param("timeId") String timeId,@Param("date") String date,@Param("srid") String srid);
 
-    //han
 
+    @Select("select nus_ing from studyroom_log where srid = #{srid} and date = #{date} and time_id = #{timeId}")
+    int selectByNusing(@Param("srid") String srid, @Param("timeId")String timeId,@Param("date") String date);
+
+    @Select("select * from student_study WHERE student_id = #{studentId} and count = 1 and date = #{date}")
+    @ResultMap("studentstudyResultMap")
+    List<StudentStudy> selectByCount(@Param("studentId") String studentId,@Param("date") String date);
 }

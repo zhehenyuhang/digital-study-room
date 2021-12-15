@@ -11,8 +11,9 @@
 <body>
 <ul class="layui-nav layui-nav " style="padding-left: 60px">
     <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/web/jsp/StudentPage/Studentindex.jsp">首页</a></li>
-    <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/web/jsp/StudentPage/NotificationInformation.jsp">通知</a></li>
+    <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/noticeServlet">通知</a></li>
     <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/selectStudyroomCSServlet">选座</a></li>
+    <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/selectCountServlet">查看今日自习</a></li>
 
 
 

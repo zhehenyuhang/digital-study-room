@@ -128,11 +128,11 @@ public class StudyroomService {
         sqlSession.close();
     }
 
-    public Studyroom selectAcademy(int id){
+    public Studyroom selectAcademy(String  academyName){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         StudyroomMapper mapper = sqlSession.getMapper(StudyroomMapper.class);
 
-        Studyroom studyroom = mapper.selectAcademy(id);
+        Studyroom studyroom = mapper.selectAcademy(academyName);
 
         sqlSession.close();
 

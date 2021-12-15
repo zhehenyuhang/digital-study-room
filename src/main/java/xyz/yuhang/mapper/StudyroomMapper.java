@@ -137,10 +137,10 @@ public interface StudyroomMapper {
 
     /**
      * 在教室表中查询是否存在有此学院ID的教室
-     * @param id
+     * @param academyName
      */
-    @Select("select distinct academy from all_studyroom where academy = #{id}")
-    Studyroom selectAcademy(int id);
+    @Select("select distinct academy from all_studyroom where academy = #{academyName}")
+    Studyroom selectAcademy(String  academyName);
 
     /**
      * 删除学院

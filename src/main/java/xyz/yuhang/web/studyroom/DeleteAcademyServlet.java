@@ -15,12 +15,16 @@ public class DeleteAcademyServlet extends HttpServlet {
     StudyroomService studyroomService = new StudyroomService();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+        request.setCharacterEncoding("utf-8");
+        String academyName = request.getParameter("academyName");
+        academyName = new String(academyName.getBytes("iso-8859-1"),"utf-8");
         String id = request.getParameter("id");
 
         //查询教室表中是否存在此学院的教室存在则不允许删除
 
 
-        Studyroom studyroom = studyroomService.selectAcademy(Integer.parseInt(id));
+        Studyroom studyroom = studyroomService.selectAcademy(academyName);
 
         if(studyroom == null){
             //不存在  可以删除

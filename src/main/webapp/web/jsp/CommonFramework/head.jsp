@@ -31,7 +31,7 @@
 <div class="layui-layout layui-layout-admin layui-header " id="div1" >
     <div class="layui-logo layui-hide-xs layui-bg-black" id="div2"><a href="${pageContext.request.contextPath }/web/jsp/HomePage/zhuye.jsp" style=" color: #fff;">自习室管理系统</a></div>
     <!-- 头部区域（可配合layui 已有的水平导航） -->
-    <ul class="layui-nav layui-layout-left">
+    <ul class="layui-nav layui-layout-left" style="width: 100%">
         <marquee scrollAmount=2 direction="left" scrolldelay="60" style="width: 1040px;height: 20px;padding: 20px;"> <font-size :50px;color="block" >欢迎使用自习室管理系统，祝你使用愉快！</font-size></marquee>
     </ul>
     <ul class="layui-nav layui-layout-right" >

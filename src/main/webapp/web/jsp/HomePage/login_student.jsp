@@ -33,7 +33,7 @@
             </div>
           </div>
           <input type="submit" class="login-button" value="登录" >
-          <div class="footer"> <a href="Register.jsp">注册</a> | <a href="index.jsp">切换端口</a></div>
+          <div class="footer"> <a href="Register.jsp">注册</a> | <a href="${pageContext.request.contextPath}/web/jsp/HomePage/index.jsp">切换端口</a></div>
 
         </form>
 

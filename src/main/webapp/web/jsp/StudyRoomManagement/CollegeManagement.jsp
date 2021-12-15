@@ -59,7 +59,7 @@ To change this template use File | Settings | File Templates.
 
                     <td>
                         <a href="/digital-study-room/selectByIdAcademyServlet?id=${academy.id}">修改</a>
-                        <a href="/digital-study-room/deleteAcademyServlet?id=${academy.id}">删除</a>
+                        <a href="/digital-study-room/deleteAcademyServlet?id=${academy.id}&academyName=${academy.academyName}">删除</a>
                     </td>
                 </tr>
             </c:forEach>
