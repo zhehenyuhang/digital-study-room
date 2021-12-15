@@ -30,7 +30,7 @@
 ">
             <div class="layui-btn-container">
                 <button type="button" class="layui-btn"><a href="${pageContext.request.contextPath }/selectSridServlet">添加教室</a></button>
-                <button type="button" class="layui-btn">批量添加</button>
+                <%--<button type="button" class="layui-btn">批量添加</button>--%>
 
 
             </div>

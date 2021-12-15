@@ -30,7 +30,7 @@ To change this template use File | Settings | File Templates.
 ">
             <div class="layui-btn-container">
                 <button type="button" class="layui-btn"><a href="${pageContext.request.contextPath }/web/jsp/StudyRoomManagement/addCollege.jsp">添加学院</a></button>
-                <button type="button" class="layui-btn">批量添加</button>
+                <%--<button type="button" class="layui-btn">批量添加</button>--%>
 
 
             </div>
@@ -38,7 +38,7 @@ To change this template use File | Settings | File Templates.
     display: flex;
 ">
                 <input class="layui-input"  name="academyName" placeholder="输入你要查询的名字">
-                <input  type="submit" value="查询">
+                <input  type="submit" value="查询" class="layui-btn">
             </form>
         </div>
 
