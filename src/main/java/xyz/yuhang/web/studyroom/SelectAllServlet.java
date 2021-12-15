@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -19,9 +20,19 @@ public class SelectAllServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<Studyroom> studyrooms = studyroomService.selectStudyroom();
+        HttpSession session = request.getSession();
+        Object studyroomwhere = session.getAttribute("studyroomwhere");
+        Object studyrooms;
+        if ("1".equals(studyroomwhere)){
+            //已经查询过，显示查询的studyroomLogs
+            studyrooms = session.getAttribute("studyrooms");
+        }else {
+            //未查询，获取新的查询
+            studyrooms = studyroomService.selectStudyroom();
+        }
 
-        request.setAttribute("studyrooms",studyrooms);
+
+        session.setAttribute("studyrooms",studyrooms);
 
         // List academys = null;
         //

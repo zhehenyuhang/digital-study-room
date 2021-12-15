@@ -25,10 +25,21 @@ To change this template use File | Settings | File Templates.
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
         <legend>学生信息</legend>
     </fieldset>
-    <div class="layui-btn-container">
-        <button type="button" class="layui-btn"><a href="${pageContext.request.contextPath }/web/jsp/UserManagement/addStudent.jsp">添加学生</a></button>
-        <button type="button" class="layui-btn">批量添加</button>
-        <button type="button" class="layui-btn">其他</button>
+    <div style="
+    display: flex;
+">
+        <div class="layui-btn-container">
+            <button type="button" class="layui-btn"><a href="${pageContext.request.contextPath }/web/jsp/UserManagement/addStudent.jsp">添加学生</a></button>
+            <button type="button" class="layui-btn">批量添加</button>
+
+
+        </div>
+        <form action="${pageContext.request.contextPath}/selectByNamestudent" method="post" style="
+    display: flex;
+">
+            <input class="layui-input"  name="studentName" placeholder="输入你要查询的名字">
+            <input  type="submit" value="查询">
+        </form>
     </div>
     <table class="layui-table" border="1" cellspacing="0" style=" width: 75%;">
 

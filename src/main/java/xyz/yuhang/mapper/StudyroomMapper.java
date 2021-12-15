@@ -190,6 +190,23 @@ public interface StudyroomMapper {
     @Update("update studyroom_log set nus_ing=#{seatNumber}-us_ing where srid = #{srid} and Seat_number = #{seatNumber} and academy_name=#{academyName}")
     void updateStudyroomfLog(@Param("srid") String srid,@Param("seatNumber")int seatNumber,@Param("academyName")String academyName);
 
+    /**
+     * 模糊查询
+     * @param academyName
+     * @return
+     */
+    @Select("select * from academy where academy_name like #{academyName}")
+    @ResultMap("academyResultMap")
+    List<Academy> selectByname(String academyName);
+
+    /**
+     * 模糊查询
+     * @param academyName
+     * @return
+     */
+    @Select("select * from all_studyroom where srid like #{srid}")
+    @ResultMap("studyroomResultMap")
+    List<Studyroom> selectBynamestudyroom(String srid);
 
 }
 

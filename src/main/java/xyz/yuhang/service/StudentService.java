@@ -4,9 +4,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import xyz.yuhang.StudentStudyJdbc;
 import xyz.yuhang.mapper.StudentMapper;
+import xyz.yuhang.mapper.TeacherMapper;
 import xyz.yuhang.pojo.AccountStudent;
 import xyz.yuhang.pojo.Student;
 import xyz.yuhang.pojo.StudentStudy;
+import xyz.yuhang.pojo.Teacher;
 import xyz.yuhang.util.SqlSessionFactoryUtils;
 
 import java.util.List;
@@ -189,6 +191,19 @@ public class StudentService {
         sqlSession.close();
 
         return StudentStudy;
+    }
+
+
+    public List<Student> selectByname(String studentName){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+
+        studentName = "%"+studentName+"%";
+        List<Student> students = mapper.selectByname(studentName);
+
+        sqlSession.close();
+
+        return students;
     }
 
 }

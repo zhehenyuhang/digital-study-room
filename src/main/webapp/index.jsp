@@ -9,7 +9,7 @@ To change this template use File | Settings | File Templates.
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="1;url='web/jsp/HomePage/login_student.jsp'">
+    <meta http-equiv="refresh" content="1;url='web/jsp/HomePage/index.jsp'">
     <title>自习室管理平台登录</title>
 </head>
 <body>

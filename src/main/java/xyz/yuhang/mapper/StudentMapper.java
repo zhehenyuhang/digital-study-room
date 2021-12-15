@@ -7,6 +7,7 @@ import xyz.yuhang.StudentStudyJdbc;
 import xyz.yuhang.pojo.AccountStudent;
 import xyz.yuhang.pojo.Student;
 import xyz.yuhang.pojo.StudentStudy;
+import xyz.yuhang.pojo.Teacher;
 
 import java.util.List;
 
@@ -97,6 +98,13 @@ public interface StudentMapper {
 
 
 
-    // void addStudentStudy(String stu);
+    /**
+     * 模糊查询
+     * @param teacherName
+     * @return
+     */
+    @Select("select * from all_student where Student_name like #{studentName}")
+    @ResultMap("studentResultMap")
+    List<Student> selectByname(String studentName);
 
 }

@@ -5,10 +5,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import xyz.yuhang.mapper.StudentMapper;
 import xyz.yuhang.mapper.StudyroomMapper;
-import xyz.yuhang.pojo.Academy;
-import xyz.yuhang.pojo.Student;
-import xyz.yuhang.pojo.Studyroom;
-import xyz.yuhang.pojo.StudyroomLog;
+import xyz.yuhang.mapper.TeacherMapper;
+import xyz.yuhang.pojo.*;
 import xyz.yuhang.util.SqlSessionFactoryUtils;
 
 import java.util.List;
@@ -285,6 +283,31 @@ public class StudyroomService {
 
         sqlSession.commit();
         sqlSession.close();
+    }
+
+
+    public List<Academy> selectByname(String academyName){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        StudyroomMapper mapper = sqlSession.getMapper(StudyroomMapper.class);
+
+        academyName = "%"+academyName+"%";
+        List<Academy> academies = mapper.selectByname(academyName);
+
+        sqlSession.close();
+
+        return academies;
+    }
+
+    public List<Studyroom> selectBynamestudyroom(String srid){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        StudyroomMapper mapper = sqlSession.getMapper(StudyroomMapper.class);
+
+        srid = "%"+srid+"%";
+        List<Studyroom> studyrooms = mapper.selectBynamestudyroom(srid);
+
+        sqlSession.close();
+
+        return studyrooms;
     }
 
 

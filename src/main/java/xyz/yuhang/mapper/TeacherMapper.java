@@ -81,4 +81,13 @@ public interface TeacherMapper {
     Teacher loginadd(@Param("teacherId") String teacherId, @Param("teacherName") String teacherName);
 
     String teacherName(String teacherId);
+
+    /**
+     * 模糊查询
+     * @param teacherName
+     * @return
+     */
+    @Select("select * from all_teacher where Teacher_name like #{teacherName}")
+    @ResultMap("teacherResultMap")
+    List<Teacher> selectByname(String teacherName);
 }

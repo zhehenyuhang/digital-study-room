@@ -170,4 +170,16 @@ public class TeacherService {
 
         return teacherName;
     }
+
+    public List<Teacher> selectByname(String teacherName){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+
+        teacherName = "%"+teacherName+"%";
+        List<Teacher> teachers = mapper.selectByname(teacherName);
+
+        sqlSession.close();
+
+        return teachers;
+    }
 }
