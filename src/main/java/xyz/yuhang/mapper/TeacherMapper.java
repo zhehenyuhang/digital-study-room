@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import xyz.yuhang.pojo.AccountStudent;
 import xyz.yuhang.pojo.AccountTeacher;
+import xyz.yuhang.pojo.StudyroomLog;
 import xyz.yuhang.pojo.Teacher;
 
 import java.util.List;
@@ -90,4 +91,6 @@ public interface TeacherMapper {
     @Select("select * from all_teacher where Teacher_name like #{teacherName}")
     @ResultMap("teacherResultMap")
     List<Teacher> selectByname(String teacherName);
+
+
 }

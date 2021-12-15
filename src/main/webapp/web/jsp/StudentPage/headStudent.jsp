@@ -7,10 +7,11 @@
     <title>Title</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/web/layui/css/layui.css">
     <script src="${pageContext.request.contextPath}/web/layui/layui.js"></script>
+
 </head>
 <body>
 <ul class="layui-nav layui-nav " style="padding-left: 60px">
-    <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/web/jsp/StudentPage/Studentindex.jsp">首页</a></li>
+    <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/studentUServlet">首页</a></li>
     <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/noticeServlet">通知</a></li>
     <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/selectStudyroomCSServlet">选座</a></li>
     <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/selectCountServlet">查看今日自习</a></li>

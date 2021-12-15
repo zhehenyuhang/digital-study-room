@@ -201,12 +201,22 @@ public interface StudyroomMapper {
 
     /**
      * 模糊查询
-     * @param academyName
+     * @param srid
      * @return
      */
     @Select("select * from all_studyroom where srid like #{srid}")
     @ResultMap("studyroomResultMap")
     List<Studyroom> selectBynamestudyroom(String srid);
+
+
+    /**
+     * 查座位
+     * @return
+     */
+    @Select("select sum(Seat_number) as Seat_number,SUM(us_ing) as us_ing,SUM(nus_ing) as nus_ing\n" +
+            "from studyroom_log")
+    @ResultMap("studyroomLogResultMap")
+    StudyroomLog selectByu();
 
 }
 

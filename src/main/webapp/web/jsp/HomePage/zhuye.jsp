@@ -21,19 +21,19 @@
         <ul class="layui-border-box site-doc-icon site-doc-anim" style=" display: flex;">
             <li class="quan">
                 <div class="layui-anim" data-anim="layui-anim-scale" style=" width: 200px; height: 200px; line-height: 150px; margin: 0 auto 10px; text-align: center; background-color: #009688; cursor: pointer; color: #fff; border-radius: 50%;">
-                    <div style=" font-size: 55px;">300</div>
+                    <div style=" font-size: 55px;">${seatNumber}</div>
                 </div>
                 <div style=" text-align: center; margin: 17px 0px; font-size: 25px;">总座位</div>
             </li>
             <li class="quan">
                 <div class="layui-anim" data-anim="layui-anim-scale" style=" width: 200px; height: 200px; line-height: 150px; margin: 0 auto 10px; text-align: center; background-color: #009688; cursor: pointer; color: #fff; border-radius: 50%;">
-                    <div style=" font-size: 55px;">231</div>
+                    <div style=" font-size: 55px;">${usIng}</div>
                 </div>
                 <div style=" text-align: center; margin: 17px 0px; font-size: 25px;">已用座位</div>
             </li>
             <li class="quan">
                 <div class="layui-anim" data-anim="layui-anim-scale" style=" width: 200px; height: 200px; line-height: 150px; margin: 0 auto 10px; text-align: center; background-color: #009688; cursor: pointer; color: #fff; border-radius: 50%;">
-                    <div style=" font-size: 55px;">61</div>
+                    <div style=" font-size: 55px;">${nusIng}</div>
                 </div>
                 <div style=" text-align: center; margin: 17px 0px; font-size: 25px;">剩余座位</div>
             </li>
@@ -60,6 +60,18 @@
             <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
             <div class="layui-timeline-content layui-text">
                 <div class="layui-timeline-title">2021.10.03分布开始ing...</div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">2021.12.10基本完工</div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">2021.12.xx升级系统</div>
             </div>
         </li>
     </ul>

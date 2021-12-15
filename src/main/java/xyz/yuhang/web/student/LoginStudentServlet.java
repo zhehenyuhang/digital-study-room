@@ -3,7 +3,9 @@ package xyz.yuhang.web.student;
 import xyz.yuhang.StudentStudyJdbc;
 import xyz.yuhang.StudyroomLogJdbc;
 import xyz.yuhang.pojo.AccountStudent;
+import xyz.yuhang.pojo.StudyroomLog;
 import xyz.yuhang.service.StudentService;
+import xyz.yuhang.service.StudyroomService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +20,7 @@ import java.io.PrintWriter;
 public class LoginStudentServlet extends HttpServlet {
 
     StudentService studentService = new StudentService();
+    StudyroomService studyroomService = new StudyroomService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -39,6 +42,17 @@ public class LoginStudentServlet extends HttpServlet {
             new StudyroomLogJdbc().play();
             new StudentStudyJdbc().play();
             session.setAttribute("studentId",login.getStudentId());
+
+            //座位
+            StudyroomLog studyroomLog = studyroomService.selectByu();
+            int seatNumber = studyroomLog.getSeatNumber();
+            int usIng = studyroomLog.getUsIng();
+            int nusIng = studyroomLog.getNusIng();
+
+            session.setAttribute("seatNumber",seatNumber);
+            session.setAttribute("usIng",usIng);
+            session.setAttribute("nusIng",nusIng);
+
             response.sendRedirect(contextPath+"/web/jsp/StudentPage/Studentindex.jsp");
         }else {
             writer.write("登陆失败");

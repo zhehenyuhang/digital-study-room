@@ -12,6 +12,11 @@
             margin: 0 auto;
         }
     </style>
+    <style>
+        .quan{
+            margin: 0px 115px;
+        }
+    </style>
     <script src="../../js/Student/exporting.js"></script>
     <script src="../../js/Student/highcharts.js"></script>
     <script src="../../js/Student/networkgraph.js"></script>
@@ -20,88 +25,66 @@
 </head>
 <body>
 <jsp:include page="headStudent.jsp"></jsp:include>
-<div id="container"></div>
+<div style="padding: 15px;height: 600px;">
+    <div style="max-width: 1140px;">
+        <ul class="layui-border-box site-doc-icon site-doc-anim" style=" display: flex;">
+            <li class="quan">
+                <div class="layui-anim" data-anim="layui-anim-scale" style=" width: 200px; height: 200px; line-height: 150px; margin: 0 auto 10px; text-align: center; background-color: #009688; cursor: pointer; color: #fff; border-radius: 50%;">
+                    <div style=" font-size: 55px;">${seatNumber}</div>
+                </div>
+                <div style=" text-align: center; margin: 17px 0px; font-size: 25px;">总座位</div>
+            </li>
+            <li class="quan">
+                <div class="layui-anim" data-anim="layui-anim-scale" style=" width: 200px; height: 200px; line-height: 150px; margin: 0 auto 10px; text-align: center; background-color: #009688; cursor: pointer; color: #fff; border-radius: 50%;">
+                    <div style=" font-size: 55px;">${usIng}</div>
+                </div>
+                <div style=" text-align: center; margin: 17px 0px; font-size: 25px;">已用座位</div>
+            </li>
+            <li class="quan">
+                <div class="layui-anim" data-anim="layui-anim-scale" style=" width: 200px; height: 200px; line-height: 150px; margin: 0 auto 10px; text-align: center; background-color: #009688; cursor: pointer; color: #fff; border-radius: 50%;">
+                    <div style=" font-size: 55px;">${nusIng}</div>
+                </div>
+                <div style=" text-align: center; margin: 17px 0px; font-size: 25px;">剩余座位</div>
+            </li>
+        </ul>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>更新情况</legend>
+    </fieldset>
+    <ul class="layui-timeline">
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">2021.09.20计划萌芽</div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">2021.09.31项目准备</div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">2021.10.03分布开始ing...</div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">2021.12.10基本完工</div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">2021.12.xx升级系统</div>
+            </div>
+        </li>
+    </ul>
+
+</div>>
 </body>
 </html>
-<script>
-    Highcharts.addEvent(
-        Highcharts.seriesTypes.networkgraph,
-        'afterSetOptions',
-        function (e) {
-            var colors = Highcharts.getOptions().colors,
-                i = 0,
-                nodes = {};
-            e.options.data.forEach(function (link) {
-                if (link[0] === 'Proto Indo-European') {
-                    nodes['Proto Indo-European'] = {
-                        id: 'Proto Indo-European',
-                        marker: {
-                            radius: 20
-                        }
-                    };
-                    nodes[link[1]] = {
-                        id: link[1],
-                        marker: {
-                            radius: 10
-                        },
-                        color: colors[i++]
-                    };
-                } else if (nodes[link[0]] && nodes[link[0]].color) {
-                    nodes[link[1]] = {
-                        id: link[1],
-                        color: nodes[link[0]].color
-                    };
-                }
-            });
-            e.options.nodes = Object.keys(nodes).map(function (id) {
-                return nodes[id];
-            });
-        }
-    );
-    Highcharts.chart('container', {
-        chart: {
-            type: 'networkgraph',
-            height: '100%'
-        },
-        plotOptions: {
-            networkgraph: {
-                keys: ['from', 'to'],
-                layoutAlgorithm: {
-                    enableSimulation: true
-                }
-            }
-        },
-        series: [{
-            dataLabels: {
-                enabled: true
-            },
-            data: [
-                ['渭南师范学院', '计算机学院'],
-                ['计算机学院', '5213'],
-                ['5213', '剩余座位'],
-                [ '剩余座位','45'],
-
-                ['渭南师范学院','体育学院'],
-                ['体育学院', '543'],
-                ['543', '剩余座位1'],
-                [ '剩余座位1','30'],
-
-                ['渭南师范学院','音乐学院'],
-                ['音乐学院', '3212'],
-                ['3212', '剩余座位3'],
-                [ '剩余座位3','36'],
-
-                ['渭南师范学院','外国语学院'],
-                ['外国语学院', '2312'],
-                ['2312', '剩余座位4'],
-                [ '剩余座位4','40'],
-
-                ['渭南师范学院','经管学院'],
-                ['经管学院', '2313'],
-                ['2313', '剩余座位5'],
-                [ '剩余座位5','40']
-            ]
-        }]
-    });
-
-</script>

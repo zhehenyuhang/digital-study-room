@@ -311,4 +311,15 @@ public class StudyroomService {
     }
 
 
+    public StudyroomLog selectByu(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        StudyroomMapper mapper = sqlSession.getMapper(StudyroomMapper.class);
+
+        StudyroomLog studyroomLog = mapper.selectByu();
+
+        sqlSession.close();
+
+        return studyroomLog;
+    }
+
 }
