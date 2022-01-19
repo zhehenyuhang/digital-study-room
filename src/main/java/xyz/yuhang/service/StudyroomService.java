@@ -311,11 +311,11 @@ public class StudyroomService {
     }
 
 
-    public StudyroomLog selectByu(){
+    public StudyroomLog selectByu(String date){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         StudyroomMapper mapper = sqlSession.getMapper(StudyroomMapper.class);
 
-        StudyroomLog studyroomLog = mapper.selectByu();
+        StudyroomLog studyroomLog = mapper.selectByu(date);
 
         sqlSession.close();
 

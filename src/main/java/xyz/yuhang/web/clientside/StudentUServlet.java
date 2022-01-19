@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 @WebServlet("/studentUServlet")
 public class StudentUServlet extends HttpServlet {
@@ -33,8 +35,15 @@ public class StudentUServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
 
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
+        Date date = new Date(System.currentTimeMillis());
+        String strTime = new SimpleDateFormat("yyyy-MM-dd").format(date);
+        // String[] format = simpleDateFormat.format(date).split(" ");
+        int time = Integer.parseInt(strTime.replace("-",""));
+
+
         //座位
-        StudyroomLog studyroomLog = studyroomService.selectByu();
+        StudyroomLog studyroomLog = studyroomService.selectByu(String.valueOf(time));
         int seatNumber = studyroomLog.getSeatNumber();
         int usIng = studyroomLog.getUsIng();
         int nusIng = studyroomLog.getNusIng();

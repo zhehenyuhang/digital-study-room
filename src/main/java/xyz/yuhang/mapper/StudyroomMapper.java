@@ -214,9 +214,10 @@ public interface StudyroomMapper {
      * @return
      */
     @Select("select sum(Seat_number) as Seat_number,SUM(us_ing) as us_ing,SUM(nus_ing) as nus_ing\n" +
-            "from studyroom_log")
+            "from studyroom_log\n" +
+            "where date = #{date}")
     @ResultMap("studyroomLogResultMap")
-    StudyroomLog selectByu();
+    StudyroomLog selectByu(String date);
 
 }
 
